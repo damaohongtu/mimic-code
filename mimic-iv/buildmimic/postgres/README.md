@@ -26,6 +26,22 @@ psql -d mimiciv -v ON_ERROR_STOP=1 -v mimic_data_dir=mimiciv/2.2 -f mimic-iv/bui
 psql -d mimiciv -v ON_ERROR_STOP=1 -v mimic_data_dir=mimiciv/2.2 -f mimic-iv/buildmimic/postgres/index.sql
 ```
 
+
+```sh
+\c mimiciv
+chcp 437
+\encoding 'UTF8'
+\i E:/workspace/mimic/mimic-code/mimic-iv/buildmimic/postgres/create.sql
+
+\set mimic_data_dir 'E:/workspace/mimic/mimic-iv-2.2'
+\i E:/workspace/mimic/mimic-code/mimic-iv/buildmimic/postgres/load_gz.sql
+
+\i E:/workspace/mimic/mimic-code/mimic-iv/buildmimic/postgres/constraint.sql
+\i E:/workspace/mimic/mimic-code/mimic-iv/buildmimic/postgres/index.sql
+```
+
+
+
 ## Detailed guide
 
 First ensure that Postgres is running on your computer. For installation instructions, see: [http://www.postgresql.org/download/](http://www.postgresql.org/download/)
